@@ -1,0 +1,605 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>USA Poodle</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Layout concept: a long single-page scrollable "book" of the site, chapters
+   divided by soft color bands, with a slim sticky chapter-nav. Warm cream +
+   deep burgundy/red grounded in "deep red toy poodle" coloring, not a
+   generic purple-blue gradient. Fraunces (warm, slightly eccentric serif)
+   for voice, Karla for body, Caveat for handwritten asides. */
+:root{
+  --cream:#faf3ea;
+  --cream-deep:#f1e4d3;
+  --ink:#2b1a14;
+  --ink-soft:#5c4438;
+  --red:#a63a2e;
+  --red-deep:#7c2a21;
+  --red-soft:#e8b4a8;
+  --blush:#f6ddd2;
+  --gold:#c08a3e;
+  --line:#e3cdb8;
+  --card:#ffffff;
+  --shadow: 0 1px 2px rgba(43,26,20,.06), 0 8px 24px -12px rgba(43,26,20,.18);
+  --font-display:'Fraunces', 'Iowan Old Style', ui-serif, Georgia, serif;
+  --font-body:'Karla', ui-sans-serif, system-ui, sans-serif;
+  --font-hand:'Caveat', cursive;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+h1,h2,h3,h4{font-family:var(--font-display); text-wrap:balance; margin:0 0 .4em; color:var(--ink)}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1040px; margin:0 inline auto; padding-inline:20px}
+.wrap{margin-left:auto; margin-right:auto}
+.measure{max-width:62ch}
+section{padding-block:76px}
+.band-cream{background:var(--cream)}
+.band-deep{background:var(--cream-deep)}
+.band-red{background:var(--red); color:#fff8f3}
+.band-red h2, .band-red h3{color:#fff8f3}
+.eyebrow{
+  font-family:var(--font-body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  font-size:.74rem; color:var(--red); margin-bottom:.7em; display:block;
+}
+.band-red .eyebrow{color:var(--blush)}
+.btn{
+  display:inline-flex; align-items:center; gap:.4em; border-radius:999px; padding:.78em 1.5em;
+  font-family:var(--font-body); font-weight:700; font-size:.92rem; text-decoration:none;
+  border:1.5px solid var(--red); color:var(--red); cursor:pointer; background:transparent;
+  transition:transform .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-solid{background:var(--red); color:#fff8f3}
+.btn-solid:hover{background:var(--red-deep); border-color:var(--red-deep)}
+.band-red .btn{border-color:#fff8f3; color:#fff8f3}
+.band-red .btn-solid{background:#fff8f3; color:var(--red-deep); border-color:#fff8f3}
+.btn-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:1.6em}
+
+/* nav */
+nav.chapters{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+  background:rgba(250,243,234,.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line); overflow-x:auto;
+}
+nav.chapters .inner{display:flex; gap:22px; padding:14px 20px; max-width:1040px; margin:0 auto; white-space:nowrap}
+nav.chapters a{font-size:.82rem; font-weight:600; letter-spacing:.02em; text-decoration:none; color:var(--ink-soft)}
+nav.chapters a:hover{color:var(--red)}
+nav.chapters .brand{font-family:var(--font-display); font-weight:600; font-size:1.05rem; color:var(--red); margin-right:4px}
+
+/* hero */
+.hero{padding-block:64px 56px; position:relative}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem); font-weight:600; line-height:1.04}
+.hero h1 em{font-style:italic; color:var(--red); font-weight:500}
+.hero .lede{font-size:1.1rem; color:var(--ink-soft); max-width:46ch}
+.hero-photos{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.hero-photos img{border-radius:18px; box-shadow:var(--shadow); object-fit:cover; width:100%; height:100%}
+.hero-photos .tall{grid-row:span 2; aspect-ratio:3/4}
+.hero-photos .wide{aspect-ratio:4/3}
+
+/* trust strip */
+.trust-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden}
+.trust-grid div{background:var(--card); padding:22px 20px}
+.trust-grid .mark{color:var(--red); font-weight:700; font-size:1.1rem; display:block; margin-bottom:.3em}
+.trust-grid p{margin:0; font-size:.92rem; color:var(--ink-soft)}
+.trust-grid .akc-cell{display:flex; gap:14px; align-items:center}
+.trust-grid .akc-cell img{width:52px; height:52px; border-radius:50%; flex:0 0 auto}
+.akc-strip{display:flex; align-items:center; justify-content:center; gap:16px; margin:22px auto 0; flex-wrap:wrap}
+.akc-strip img{width:64px; height:64px; border-radius:50%; box-shadow:var(--shadow)}
+.akc-strip .akc-text{font-size:.86rem; color:var(--ink-soft); max-width:46ch; text-align:left}
+.akc-strip .akc-text a{color:var(--red); font-weight:700; text-decoration:none}
+.akc-strip .akc-text a:hover{text-decoration:underline}
+
+/* generic two col */
+.split{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center}
+.split img{border-radius:18px; box-shadow:var(--shadow); width:100%; aspect-ratio:4/5; object-fit:cover}
+.split.rev{grid-template-columns:1fr 1fr}
+.split.rev .media{order:2}
+
+/* pillars / cards */
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:2.2em}
+.card{background:var(--card); border-radius:16px; padding:26px 24px; box-shadow:var(--shadow)}
+.card .num{font-family:var(--font-display); font-style:italic; color:var(--red-soft); font-size:1.6rem; margin-bottom:.2em; display:block}
+.card h4{font-size:1.08rem; margin-bottom:.4em}
+.card p{font-size:.94rem; color:var(--ink-soft); margin:0}
+
+ul.check{list-style:none; margin:0 0 1em; padding:0; display:grid; gap:.55em}
+ul.check li{position:relative; padding-left:1.6em; font-size:.97rem}
+ul.check li::before{content:"✓"; position:absolute; left:0; color:var(--red); font-weight:700}
+.band-red ul.check li::before{color:var(--blush)}
+
+/* puppy cards */
+.puppy-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:2em}
+.puppy-card{background:var(--card); border-radius:18px; overflow:hidden; box-shadow:var(--shadow)}
+.puppy-card img{aspect-ratio:4/3; object-fit:cover; width:100%}
+.puppy-body{padding:20px 22px}
+.puppy-body .status{display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; background:var(--blush); color:var(--red-deep); padding:.3em .7em; border-radius:999px; margin-bottom:.6em}
+.puppy-body h4{font-size:1.25rem; margin-bottom:.15em}
+.puppy-body .meta{font-size:.86rem; color:var(--ink-soft); margin-bottom:.7em}
+.puppy-body .meta span{display:block}
+
+/* litters timeline */
+.litter-year{margin-top:2.4em}
+.litter-year > .yr{font-family:var(--font-display); font-style:italic; font-size:1.5rem; color:var(--red); margin-bottom:.6em; display:block}
+.litter{border-left:2px solid var(--line); padding:0 0 1.6em 22px; position:relative}
+.litter::before{content:""; position:absolute; left:-6px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--red)}
+.litter h4{font-size:1.1rem; margin-bottom:.1em}
+.litter .when{font-size:.85rem; color:var(--gold); font-weight:700; margin-bottom:.4em; display:block}
+.litter p{font-size:.95rem; color:var(--ink-soft); margin:0}
+
+/* steps */
+.steps{display:grid; gap:0; margin-top:2em}
+.step{display:grid; grid-template-columns:52px 1fr; gap:18px; padding-block:22px; border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--font-display); font-style:italic; color:var(--red-soft); font-size:2rem; line-height:1}
+.step h4{margin-bottom:.3em}
+.step p{font-size:.95rem; color:var(--ink-soft); margin:0}
+
+/* faq accordion */
+.faq-group{margin-top:1.6em}
+.faq-group h4.cat{font-family:var(--font-body); font-weight:700; color:var(--red); font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; margin:1.8em 0 .6em}
+details.q{border-bottom:1px solid var(--line); padding-block:14px}
+details.q summary{cursor:pointer; font-weight:600; font-size:1rem; list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:baseline}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+"; font-family:var(--font-display); font-size:1.3rem; color:var(--red); flex:0 0 auto}
+details.q[open] summary::after{content:"–"}
+details.q p{margin-top:.6em; font-size:.95rem; color:var(--ink-soft)}
+
+/* quote / mentor */
+.mentor{background:var(--card); border-radius:20px; padding:40px; box-shadow:var(--shadow); display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:center}
+.mentor img{border-radius:14px; aspect-ratio:1; object-fit:cover}
+.mentor .hand{font-family:var(--font-hand); font-size:1.5rem; color:var(--red); line-height:1.3}
+.mentor .photo-placeholder{border-radius:14px; aspect-ratio:1; background:linear-gradient(135deg,var(--blush),var(--cream-deep)); display:flex; align-items:center; justify-content:center; text-align:center; padding:16px; border:2px dashed var(--red-soft)}
+.mentor .photo-placeholder span{font-family:var(--font-hand); font-size:1.2rem; color:var(--red-deep)}
+
+.note{font-family:var(--font-hand); color:var(--gold); font-size:1.15rem; display:inline-block; margin-top:.2em}
+
+footer{background:var(--ink); color:var(--cream); padding-block:48px}
+footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px}
+footer .brand{font-family:var(--font-display); font-size:1.3rem; color:#fff}
+footer small{color:#c9b8ab; font-size:.82rem}
+
+.badge-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:1.2em}
+.badge{font-size:.76rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:var(--blush); color:var(--red-deep); padding:.4em .8em; border-radius:999px}
+
+/* gallery */
+.gallery-grid{columns:4 220px; column-gap:14px; margin-top:2.2em}
+.gallery-grid img{width:100%; border-radius:12px; box-shadow:var(--shadow); margin-bottom:14px; break-inside:avoid; display:block}
+@media (max-width:860px){.gallery-grid{columns:2 160px}}
+@media (max-width:560px){.gallery-grid{columns:2 140px; column-gap:10px} .gallery-grid img{margin-bottom:10px}}
+
+@media (max-width:860px){
+  .hero-grid, .split, .split.rev{grid-template-columns:1fr}
+  .split.rev .media{order:0}
+  .cards{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .puppy-grid{grid-template-columns:1fr}
+  .mentor{grid-template-columns:1fr; text-align:center}
+  .mentor img{margin:0 auto}
+}
+@media (max-width:560px){
+  section{padding-block:52px}
+  .cards{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  nav.chapters .inner{gap:16px}
+}
+</style>
+
+<nav class="chapters">
+  <div class="inner">
+    <a class="brand" href="#top">USA Poodle</a>
+    <a href="#dogs">Our Dogs</a>
+    <a href="#program">Breed Program</a>
+    <a href="#red">The Red Story</a>
+    <a href="#puppies">Available Puppies</a>
+    <a href="#claude">Meet Claude</a>
+    <a href="#litters">Past Litters</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About Us</a>
+    <a href="#apply">Application</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
+
+<header class="hero band-cream" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Red Toy Poodle Kennel · Est. in a real home, not a kennel row</span>
+      <h1>Deep Red Toy Poodles. <em>Love, lineage &amp; lively personalities.</em></h1>
+      <p class="lede">AKC-registered puppies. Carefully health-tested parents. Temperaments raised with intention. There is something truly special about welcoming a Toy Poodle into your life, especially when that little soul arrives wrapped in a deep red coat and a bright, curious personality.</p>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="#puppies">See Available Puppies</a>
+        <a class="btn" href="#about">Learn Our Story</a>
+      </div>
+    </div>
+    <div class="hero-photos">
+      <img class="tall" src="img/hero1.jpg" alt="Red Toy Poodle puppy sitting on a wooden chair">
+      <img class="wide" src="img/hero2.jpg" alt="Two Toy Poodles on green grass">
+      <img class="wide" src="img/hero3.jpg" alt="Red Toy Poodle close up portrait">
+    </div>
+  </div>
+</header>
+
+<section class="band-cream" style="padding-top:0">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="akc-cell"><img src="img/akc-seal.jpg" alt="American Kennel Club seal"><div><span class="mark">AKC Registered</span><p>Proud AKC members — all litters registered.</p></div></div>
+      <div><span class="mark">Home Raised</span><p>No kennel rows. Puppies grow up in a warm, attentive home.</p></div>
+      <div><span class="mark">Health Screened</span><p>Parents follow established health testing recommendations.</p></div>
+      <div><span class="mark">Mentor Approved</span><p>Shaped by hands-on mentorship from respected Toy Poodle breeders.</p></div>
+    </div>
+    <div class="akc-strip">
+      <img src="img/akc-seal.jpg" alt="American Kennel Club seal">
+      <p class="akc-text">USA Poodle is a proud AKC member in good standing. Every litter comes AKC registered, with registration fees and a lifetime microchip registration already prepaid — no extra cost or paperwork chasing on your end. You choose your puppy's official AKC registered name, and you'll receive a formal pedigree certificate. <a href="https://www.akc.org" target="_blank" rel="noopener">Learn more at akc.org →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band-deep">
+  <div class="wrap">
+    <span class="eyebrow">A quick hello from our home to yours</span>
+    <h2 style="font-size:1.9rem; max-width:24ch">Before pedigrees and genetics — our dogs are family first.</h2>
+    <p class="measure" style="color:var(--ink-soft)">Our puppies are born into everyday life. They hear laughter, vacuum cleaners, soft voices, and the rhythm of a real home. They are handled gently from day one and grow up confident, social, and deeply connected to people. If you are looking for a breeder who treats puppies like inventory, you are in the wrong place. If you are looking for someone who cares deeply about every tiny heartbeat, welcome home.</p>
+  </div>
+</section>
+
+<section class="band-cream" id="red">
+  <div class="wrap">
+    <span class="eyebrow">The Red Story</span>
+    <h2 style="font-size:2rem">Red that turns heads, genetics that explain why.</h2>
+    <div class="split" style="margin-top:2.4em">
+      <div>
+        <p class="measure">A deep red Toy Poodle is one of those dogs people remember. The coat glows, the eyes pop, and the whole dog has this confident "I know I'm cute" energy. But true red is not a paint job — it is genetics, lineage, and careful selection over time.</p>
+        <p class="measure">Red is often described as one of the newer recognized Poodle colors, becoming official in 1980. Consistent, rich reds are hard to reproduce predictably: coat depth varies because multiple genetic factors influence how intense the red looks and how it matures.</p>
+        <ul class="check">
+          <li><strong>Newborn to early weeks</strong> — many red puppies are born rich and saturated.</li>
+          <li><strong>6 to 10 weeks</strong> — some lines show a lighter phase, then a darker band near the skin.</li>
+          <li><strong>Teenage &amp; adult coat</strong> — some reds deepen again, some soften. Every dog is an individual.</li>
+        </ul>
+        <p class="note">— our promise: we'll always tell you what we see, what the lineage suggests, and what's realistic.</p>
+      </div>
+      <div class="media"><img src="img/red1.jpg" alt="Deep red Toy Poodle puppy sitting on a bench, showing rich coat color"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-red" id="dogs">
+  <div class="wrap">
+    <span class="eyebrow">Our Dogs</span>
+    <h2 style="font-size:2rem; max-width:20ch">Meet the hearts behind every puppy.</h2>
+    <p class="measure" style="opacity:.92">Healthy puppies start with healthy parents. Our Toy Poodles are not "breeding stock" — they are our daily companions, our little comedians, our shadows in the kitchen. Every dog in our program is AKC registered, loved and raised as part of our home, and selected for health, temperament, and Toy Poodle type.</p>
+    <div class="split" style="margin-top:2.4em">
+      <div class="media"><img src="img/dogs1.jpg" alt="Toy Poodle dam resting"></div>
+      <div>
+        <h3 style="color:#fff8f3; font-size:1.3rem">What we share on every dog profile</h3>
+        <ul class="check">
+          <li>Registered name and call name</li>
+          <li>Color and approximate size</li>
+          <li>A real personality snapshot</li>
+          <li>Health testing summary, available on request</li>
+          <li>Pedigree notes — sire and dam</li>
+          <li>A full photo gallery, not just one pose</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cards" style="margin-top:2.4em">
+      <div class="card">
+        <img src="img/dogs2.jpg" alt="Dam" style="border-radius:10px; aspect-ratio:4/5; object-fit:cover; margin-bottom:14px">
+        <h4>Meet the Dams</h4>
+        <p>Our moms, the soul of the nursery — selected for strong maternal temperament, calm confidence, and correct Toy type.</p>
+      </div>
+      <div class="card">
+        <img src="img/dogs3.jpg" alt="Sire" style="border-radius:10px; aspect-ratio:4/5; object-fit:cover; margin-bottom:14px">
+        <h4>Meet the Sires</h4>
+        <p>Our dads bring structure, coat quality, pigment and temperament into every generation — stable and confident without sharpness.</p>
+      </div>
+      <div class="card">
+        <img src="img/breed1.jpg" alt="Retired dog" style="border-radius:10px; aspect-ratio:4/5; object-fit:cover; margin-bottom:14px">
+        <h4>Retired &amp; Guardian Homes</h4>
+        <p>Retirement isn't an afterthought. Our dogs deserve comfort, attention, and a calm life that stays rich and loved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-cream" id="program">
+  <div class="wrap">
+    <span class="eyebrow">Breeding Program &amp; Ethics</span>
+    <h2 style="font-size:2rem; max-width:22ch">Not fast, trendy, or accidental — intentional and hands-on.</h2>
+    <p class="measure">We love deep red Toy Poodles, but we never chase color at the expense of health, temperament, or long-term well-being. If you are looking for a breeder who treats puppies like a product, we are not the right fit. If you are looking for a breeder who plans carefully, tests responsibly, and places thoughtfully — welcome.</p>
+    <div class="cards">
+      <div class="card">
+        <span class="num">I.</span>
+        <h4>Health Foundations</h4>
+        <p>prcd PRA DNA testing, annual CAER eye exams, and patellar luxation evaluation — the testing reputable Toy Poodle guidance calls for.</p>
+      </div>
+      <div class="card">
+        <span class="num">II.</span>
+        <h4>Temperament &amp; Confidence</h4>
+        <p>Stable nerves, curiosity, affection, and calm recovery after new experiences. Genetics first, then shaped by handling from day one.</p>
+      </div>
+      <div class="card">
+        <span class="num">III.</span>
+        <h4>Breed Type &amp; Structure</h4>
+        <p>Balanced dogs move better, feel better, and age more comfortably — Toy Poodles who look like Toy Poodles.</p>
+      </div>
+    </div>
+    <div class="split" style="margin-top:3.2em">
+      <div>
+        <h3 style="font-size:1.3rem">Health testing we follow for Toy Poodles</h3>
+        <ul class="check">
+          <li>prcd PRA DNA testing</li>
+          <li>Annual eye exams by an ACVO ophthalmologist, through CAER</li>
+          <li>Patellar luxation evaluation</li>
+        </ul>
+        <p style="font-size:.9rem; color:var(--ink-soft)">Specifically listed for Toy Poodles in the Poodle Club of America health statement and Versatility in Poodles' Toy testing guidance. Results are recorded through OFA and CHIC for transparency.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1.3rem">Puppy raising protocol</h3>
+        <ul class="check">
+          <li>Quiet, observant earliest days — warmth and security first</li>
+          <li>Everyday household sounds, new textures, gentle exploration</li>
+          <li>Early grooming exposure: brushing, face handling, calm holding</li>
+          <li>Thoughtful matching based on each puppy's own personality</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-row"><a class="btn btn-solid" href="#puppies">See Available Puppies</a><a class="btn" href="#apply">Start the Application</a></div>
+  </div>
+</section>
+
+<section class="band-deep" id="puppies">
+  <div class="wrap">
+    <span class="eyebrow">Available Puppies</span>
+    <h2 style="font-size:2rem">Meet today's little red hearts.</h2>
+    <p class="measure">This page is kept current and accurate. Every puppy shown is from health-tested parents, raised in a loving home, and evaluated for temperament, curiosity, and confidence.</p>
+    <div class="puppy-grid">
+      <div class="puppy-card">
+        <img src="img/claude1.jpg" alt="Claude, a red Toy Poodle puppy, close up smiling">
+        <div class="puppy-body">
+          <span class="status">Available</span>
+          <h4>Claude</h4>
+          <div class="meta">
+            <span>Color: Red &nbsp;·&nbsp; Male &nbsp;·&nbsp; Est. adult weight ~6 lb</span>
+            <span>Born Aug 12, 2026 &nbsp;·&nbsp; Go-home Nov 1</span>
+          </div>
+          <p style="font-size:.92rem">Quiet, curious, and sharp as a tack, with a square little frame and a coat the color of a new penny. Sire: Pepe · Dam: Penny. AKC litter registration in progress.</p>
+          <div class="btn-row" style="margin-top:.8em">
+            <a class="btn btn-solid" href="#apply">Reserve Claude</a>
+            <a class="btn" href="#claude">Meet Claude →</a>
+          </div>
+        </div>
+      </div>
+      <div class="puppy-card">
+        <img src="img/gal10.jpg" alt="Two newborn red Toy Poodle puppies, Pepe x Poppy upcoming litter">
+        <div class="puppy-body">
+          <span class="status">Upcoming Litter</span>
+          <h4>Pepe &times; Poppy</h4>
+          <div class="meta">
+            <span>Expected Color: Deep Red</span>
+            <span>Estimated Due Date: October 15</span>
+          </div>
+          <p style="font-size:.92rem">Our next litter from proven parents Pepe and Poppy. Join the waitlist to be notified the moment puppies are ready to meet their families.</p>
+          <a class="btn btn-solid" href="#apply" style="margin-top:.6em">Join the Waitlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row"><a class="btn" href="#litters">See Recent Past Litters</a><a class="btn btn-solid" href="#apply">Join the Waitlist</a></div>
+  </div>
+</section>
+
+<section class="band-red" id="claude">
+  <div class="wrap">
+    <span class="eyebrow">Meet Claude</span>
+    <h2 style="font-size:2rem; max-width:22ch">A red boy with a coat the color of a new penny.</h2>
+    <div class="split" style="margin-top:2.4em">
+      <div class="media"><img src="img/claude4.jpg" alt="Claude, a red Toy Poodle puppy, held by his person"></div>
+      <div>
+        <p class="measure" style="opacity:.95">Claude is a red male Toy Poodle born August 12, 2026, out of our Pepe and Penny. He is square and well-balanced with a beautiful coat, a quiet, independent temperament, and plenty of curiosity. He's eating solid food, learning the ropes, and being handled and socialized daily.</p>
+        <ul class="check">
+          <li>Sire: Pepe &nbsp;·&nbsp; Dam: Penny</li>
+          <li>Weighed 2 lb 3 oz at seven weeks &nbsp;·&nbsp; estimated adult weight about 6 lb</li>
+          <li>AKC litter registration in progress</li>
+          <li>Go-home date: November 1 &nbsp;·&nbsp; $4,000</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-solid" href="#apply">Reserve Claude</a>
+          <a class="btn" href="https://marketplace.akc.org/breeder/usapoodle/poodle/582992" target="_blank" rel="noopener">View Claude on AKC Marketplace →</a>
+        </div>
+      </div>
+    </div>
+    <div class="cards" style="margin-top:2.4em">
+      <div class="card" style="background:transparent; box-shadow:none; padding:0"><img src="img/claude1.jpg" alt="Claude close up" style="border-radius:14px; aspect-ratio:4/5; object-fit:cover; box-shadow:var(--shadow)"></div>
+      <div class="card" style="background:rgba(255,255,255,.08); box-shadow:none; display:flex; align-items:center; grid-column:span 2"><p style="margin:0; font-size:.92rem">Serious inquiries only: (805) 888-0133 or socalhass@gmail.com. Registration terms and vaccination/vet-check details confirmed at reservation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-cream" id="litters">
+  <div class="wrap">
+    <span class="eyebrow">Past Litters Archive</span>
+    <h2 style="font-size:2rem; max-width:22ch">A living history of our Toy Poodle families.</h2>
+    <p class="measure">Health first, temperament shaped, lineage that matters. Each entry includes litter details, parent pairing, and a snapshot of what those puppies became.</p>
+    <div class="litter-year">
+      <span class="yr">Upcoming</span>
+      <div class="litter">
+        <h4>Pepe × Poppy</h4>
+        <span class="when">Estimated due October 15 · Waitlist open now</span>
+        <p>Our next litter from Pepe and Poppy. Join the waitlist to be matched thoughtfully as soon as puppies are ready.</p>
+      </div>
+    </div>
+    <div class="litter-year">
+      <span class="yr">2026</span>
+      <div class="litter">
+        <h4>Pepe × Poppy</h4>
+        <span class="when">Second litter from this pairing</span>
+        <p>Deep red coats and the steady, affectionate temperament this pairing consistently produces.</p>
+      </div>
+      <div class="litter">
+        <h4>Pepe × Poppy</h4>
+        <span class="when">First litter from this pairing</span>
+        <p>Our first Pepe and Poppy litter — vivid red coloring and confident, people-oriented pups.</p>
+      </div>
+      <div class="litter">
+        <h4>Pepe × Penny</h4>
+        <span class="when">Born August 12, 2026</span>
+        <p>This litter gave us Claude — a square, well-balanced red boy with a quiet, curious temperament. <a href="#claude" style="color:var(--red); font-weight:700; text-decoration:none">See Claude's full profile →</a></p>
+      </div>
+    </div>
+    <div class="btn-row"><a class="btn btn-solid" href="#puppies">View Available Puppies</a></div>
+  </div>
+</section>
+
+<section class="band-deep" id="gallery">
+  <div class="wrap">
+    <span class="eyebrow">Gallery</span>
+    <h2 style="font-size:2rem; max-width:22ch">A whole lot of red, curls, and happy faces.</h2>
+    <p class="measure">A giant, growing gallery of our dogs, our puppies, and the families who love them.</p>
+    <div class="gallery-grid">
+      <img src="img/gal1.jpg" alt="Woman laughing while holding a red Toy Poodle puppy">
+      <img src="img/gal2.jpg" alt="Woman in orange hat holding a red Toy Poodle puppy">
+      <img src="img/puppies1.jpg" alt="Mom holding a red Toy Poodle puppy in the kitchen">
+      <img src="img/gal3.jpg" alt="Red Toy Poodle puppy held in grass">
+      <img src="img/gal4.jpg" alt="Woman sitting with a poodle mom and her newborn puppies, American flag in background">
+      <img src="img/gal5.jpg" alt="Woman holding a tiny red Toy Poodle puppy">
+      <img src="img/gal6.jpg" alt="Adult red Toy Poodle playing in the yard">
+      <img src="img/gal7.jpg" alt="Woman holding two fluffy red Toy Poodles">
+      <img src="img/gal8.jpg" alt="Woman holding a red Toy Poodle puppy with a pink bow">
+      <img src="img/gal9.jpg" alt="Red Toy Poodle puppy walking through grass">
+      <img src="img/puppies2.jpg" alt="Red Toy Poodle puppy alone in the backyard">
+      <img src="img/scarlett1.jpg" alt="Woman holding a red Toy Poodle puppy outdoors">
+      <img src="img/about2.jpg" alt="Red Toy Poodle puppy touching noses with an adult poodle">
+      <img src="img/about3.jpg" alt="Red Toy Poodle puppy standing in grass">
+      <img src="img/gal10.jpg" alt="Two sleeping newborn red Toy Poodle puppies">
+      <img src="img/gal11.jpg" alt="Two sleeping newborn red Toy Poodle puppies cuddled together">
+      <img src="img/gal12.jpg" alt="Two red Toy Poodle puppies held up together">
+    </div>
+  </div>
+</section>
+
+<section class="band-cream" id="about">
+  <div class="wrap">
+    <span class="eyebrow">About the Breeder</span>
+    <h2 style="font-size:2rem; max-width:22ch">Passionate people, playful Poodles.</h2>
+    <div class="split rev" style="margin-top:2em">
+      <div class="media"><img src="img/about1.jpg" alt="Breeder with Toy Poodles at home"></div>
+      <div>
+        <p class="measure">If you walked into our home on a normal day, you wouldn't find a showroom or a quiet kennel. You'd probably hear tiny feet tapping across the floor, a puppy protesting bath time, and someone laughing because a red fluffball just tried to steal a sock. That's who we are.</p>
+        <p class="measure">This did not begin with a plan to "become breeders." It started with one Toy Poodle who completely changed everything — smart, affectionate, expressive, endlessly entertaining. Curiosity turned into research. Research turned into late nights reading pedigrees and studying health testing.</p>
+      </div>
+    </div>
+    <div class="cards" style="margin-top:2.6em">
+      <div class="card"><h4>Dogs first. Always.</h4><p>If a decision benefits us but not the dog, it's the wrong decision. Full stop.</p></div>
+      <div class="card"><h4>Temperament is non-negotiable.</h4><p>A beautiful coat won't help if a dog can't feel safe, confident, and loved.</p></div>
+      <div class="card"><h4>Every puppy deserves the right home,<br>not the fastest one.</h4><p>We care about who you are and how life will look for that dog ten years from now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-deep">
+  <div class="wrap">
+    <span class="eyebrow">Partners &amp; Mentorship</span>
+    <h2 style="font-size:1.9rem; max-width:24ch">Stronger together — honoring the people who shaped our program.</h2>
+    <div class="mentor">
+      <div class="photo-placeholder"><span>Linda's photo coming soon</span></div>
+      <div>
+        <h3 style="font-size:1.25rem">Honoring Linda DeBlauw — Scarlet's Fancy Poodles</h3>
+        <p style="color:var(--ink-soft)">Our founder's close friend and mentor has been instrumental in our development as breeders. Linda taught us that thoughtful pairing, deep respect for genetics, and unwavering focus on temperament matter far more than trends or superficial color claims. She's helped us tremendously, and we're glad to send people her way too.</p>
+        <p class="hand">"Breeding is a community effort. Pretending otherwise is how breeds get damaged."</p>
+        <p style="margin-top:1em"><a href="https://redandapricotpoodles.com" target="_blank" rel="noopener" style="color:var(--red); font-weight:700; text-decoration:none">Visit Scarlet's Fancy Poodles — redandapricotpoodles.com →</a></p>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Apricot Red Poodle Club</span>
+      <span class="badge">American Kennel Club</span>
+      <span class="badge">Poodle Club of America</span>
+    </div>
+  </div>
+</section>
+
+<section class="band-cream" id="apply">
+  <div class="wrap">
+    <span class="eyebrow">Puppy Application Process</span>
+    <h2 style="font-size:2rem; max-width:24ch">Your first step toward welcoming a lifelong companion.</h2>
+    <p class="measure">We know this can feel exciting and a little nerve-wracking at once. That's normal. This process is built on clarity and care, not pressure — its purpose is to help us match you with the Toy Poodle who fits your family best.</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><h4>Complete the Application</h4><p>Tell us about your home, your experience with dogs, and what you're hoping for in a companion.</p></div></div>
+      <div class="step"><span class="n">2</span><div><h4>Personal Review &amp; Conversation</h4><p>We review every application personally within 24–48 hours and may reach out to learn more.</p></div></div>
+      <div class="step"><span class="n">3</span><div><h4>Reservation &amp; Deposit</h4><p>A non-refundable deposit holds your spot and protects the integrity of the placement process.</p></div></div>
+      <div class="step"><span class="n">4</span><div><h4>Updates as Puppies Grow</h4><p>Weekly photos, growth notes, and temperament observations — you watch the journey unfold.</p></div></div>
+      <div class="step"><span class="n">5</span><div><h4>Go-Home Day</h4><p>Health records, vaccination history, and care guidance for a smooth transition — plus your puppy's AKC registration (fees prepaid), lifetime microchip registration, the AKC name you've chosen, and a formal pedigree certificate.</p></div></div>
+    </div>
+    <div class="btn-row"><a class="btn btn-solid" href="#top">Start Your Puppy Application</a></div>
+  </div>
+</section>
+
+<section class="band-red">
+  <div class="wrap">
+    <span class="eyebrow">Health Guarantee</span>
+    <h2 style="font-size:1.9rem; max-width:22ch">Because puppies are loved, not sold.</h2>
+    <p class="measure" style="opacity:.92">Every puppy leaves with a written contract and a clear health guarantee. At placement your puppy is certified by a veterinarian as being in good health, with age-appropriate vaccinations, deworming, and a full health record.</p>
+    <div class="split" style="margin-top:2em">
+      <div>
+        <h4 style="color:#fff8f3">Covers</h4>
+        <ul class="check">
+          <li>Serious genetic or congenital conditions present at birth</li>
+          <li>Confirmed by a licensed veterinarian</li>
+          <li>Documented with supporting veterinary records</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff8f3">Does not cover</h4>
+        <ul class="check">
+          <li>Routine or minor conditions, common and treatable</li>
+          <li>Accidents, infections, or injuries after placement</li>
+          <li>Conditions from lack of preventive care</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-cream" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Frequently Asked Questions</span>
+    <h2 style="font-size:2rem">For curious families starting their Toy Poodle journey.</h2>
+
+    <div class="faq-group">
+      <h4 class="cat">Availability</h4>
+      <details class="q" open><summary>Do you always have puppies available?</summary><p>Not always. Responsible breeding takes time and respect for each dog's health. Puppies are posted on our Available Puppies page once old enough to be assessed.</p></details>
+      <details class="q"><summary>How does your waitlist work?</summary><p>We notify people on the list about upcoming litters and expected timelines so you never miss a chance, and we can match puppies thoughtfully rather than rushing placements.</p></details>
+    </div>
+
+    <div class="faq-group">
+      <h4 class="cat">Breed &amp; Color</h4>
+      <details class="q"><summary>Will my red Poodle stay red?</summary><p>Red is a complex expression within the Toy Poodle coat family. Some puppies hold deep red into adulthood and others lighten slightly — both are normal.</p></details>
+      <details class="q"><summary>Do Toy Poodles shed?</summary><p>Toy Poodles have a curly coat with minimal shedding, which many find easier on allergies. Regular grooming maintains coat health.</p></details>
+    </div>
+
+    <div class="faq-group">
+      <h4 class="cat">Health</h4>
+      <details class="q"><summary>What health testing do you do on parents?</summary><p>All recommended breed health tests for Toy Poodles, including core eye exams, DNA testing, and joint evaluations — documentation shared openly before placement.</p></details>
+      <details class="q"><summary>Do puppies come with a health guarantee?</summary><p>Yes. Every puppy leaves with a written health guarantee and contract explaining coverage and how to activate it.</p></details>
+    </div>
+
+    <div class="faq-group">
+      <h4 class="cat">Red Flags to Watch For</h4>
+      <details class="q"><summary>What should I be cautious of in a breeder?</summary><p>Puppies always available with no waitlist, avoidance of health testing transparency, rushed or defensive communication, or "teacup" labels used as marketing ploys.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">USA Poodle</span>
+    <small>Deep Red Toy Poodles · AKC Registered · Rebuilt from the original site copy and photography</small>
+  </div>
+</footer>
+
+</body></html>
