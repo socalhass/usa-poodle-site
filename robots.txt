@@ -1,0 +1,26 @@
+# Proposed robots.txt for usapoodle.com
+User-agent: *
+Allow: /
+
+# AI search / retrieval crawlers: allowed (lets AI assistants cite and recommend the kennel)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# AI training crawlers: allowed by default for brand visibility. Change to "Disallow: /" if you prefer
+# that photos/text not be used for model training (does not affect Google Search or AI-search citation).
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://usapoodle.com/sitemap.xml
