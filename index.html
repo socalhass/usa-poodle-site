@@ -248,6 +248,16 @@ footer .wrap{display:flex; justify-content:space-between; align-items:center; fl
 footer .brand{font-family:var(--font-display); font-size:1.3rem; color:#fff}
 footer small{color:#c9b8ab; font-size:.82rem}
 
+.res-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:1.6em}
+.res-card{background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:14px; padding:1.1em 1.2em; min-width:0}
+.res-card h3{font-size:1.08rem; margin:0 0 .35em}
+.res-card p{font-size:.92rem; color:var(--ink-soft); margin:0 0 .7em}
+.res-card ul{list-style:none; margin:0; padding:0; display:grid; gap:.45em}
+.res-card a{color:var(--red); font-weight:700; text-decoration:none; overflow-wrap:anywhere}
+.res-card a:hover, a.badge:hover, footer .links a:hover{text-decoration:underline}
+a.badge{text-decoration:none}
+footer .links{display:flex; flex-wrap:wrap; gap:.4em 1.2em; margin-top:.8em; font-size:.85rem}
+footer .links a{color:inherit}
 .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:1.2em}
 .badge{font-size:.76rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:var(--blush); color:var(--red-deep); padding:.4em .8em; border-radius:999px}
 
@@ -285,6 +295,7 @@ footer small{color:#c9b8ab; font-size:.82rem}
     <a href="#litters">Past Litters</a>
     <a href="#gallery">Gallery</a>
     <a href="#about">About Us</a>
+    <a href="#resources">Clubs &amp; Resources</a>
     <a href="#apply">Application</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -618,8 +629,48 @@ footer small{color:#c9b8ab; font-size:.82rem}
     </div>
     <div class="badge-row">
       <span class="badge">Apricot Red Poodle Club</span>
-      <span class="badge">American Kennel Club</span>
-      <span class="badge">Poodle Club of America</span>
+      <a class="badge" href="https://www.akc.org/" target="_blank" rel="noopener">American Kennel Club</a>
+      <a class="badge" href="https://poodleclubofamerica.org/" target="_blank" rel="noopener">Poodle Club of America</a>
+      <a class="badge" href="https://poodleclubofamerica.org/find-a-poodle-breeder/poodle-club-of-southern-california/" target="_blank" rel="noopener">Poodle Club of Southern California</a>
+    </div>
+  </div>
+</section>
+
+<section class="band-cream" id="resources">
+  <div class="wrap">
+    <span class="eyebrow">Clubs &amp; Resources</span>
+    <h2 style="font-size:1.9rem; max-width:26ch">The clubs and references behind the breed.</h2>
+    <p style="max-width:62ch; color:var(--ink-soft)">Where the Poodle standard is kept, where health testing is defined, and where Southern California Poodle people meet.</p>
+    <div class="res-grid">
+      <div class="res-card">
+        <h3>American Kennel Club</h3>
+        <p>The national registry. Every USA Poodle litter is AKC registered.</p>
+        <ul>
+          <li><a href="https://www.akc.org/" target="_blank" rel="noopener">akc.org</a></li>
+          <li><a href="https://images.akc.org/pdf/breeds/standards/Poodle.pdf" target="_blank" rel="noopener">Official Standard of the Poodle (PDF)</a></li>
+          <li><a href="https://www.akc.org/breeder-programs/breed-health-testing-requirements/toy-group-health-testing-requirements/" target="_blank" rel="noopener">Toy Group health testing requirements</a></li>
+          <li><a href="https://www.akc.org/expert-advice/dog-breeds/poodle-puppy-training-timeline-how-to-raise-a-poodle/" target="_blank" rel="noopener">Poodle puppy training timeline</a></li>
+          <li><a href="https://www.akc.org/expert-advice/dog-breeds/poodle-history/" target="_blank" rel="noopener">Poodle history</a></li>
+          <li><a href="https://marketplace.akc.org/breeder/usapoodle/poodle/582992" target="_blank" rel="noopener">USA Poodle on AKC Marketplace</a></li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>Poodle Club of America</h3>
+        <p>The AKC parent club for all three Poodle varieties: Toy, Miniature and Standard.</p>
+        <ul>
+          <li><a href="https://poodleclubofamerica.org/" target="_blank" rel="noopener">poodleclubofamerica.org</a></li>
+          <li><a href="https://poodleclubofamerica.org/akc-breed-standard/" target="_blank" rel="noopener">The Poodle breed standard</a></li>
+          <li><a href="https://poodleclubofamerica.org/about-the-pca/" target="_blank" rel="noopener">About the PCA</a></li>
+          <li><a href="https://poodleclubofamerica.org/find-a-poodle-breeder/listings-category/california/" target="_blank" rel="noopener">California affiliate clubs</a></li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>Poodle Club of Southern California</h3>
+        <p>The regional Poodle Club of America affiliate for Southern California.</p>
+        <ul>
+          <li><a href="https://poodleclubofamerica.org/find-a-poodle-breeder/poodle-club-of-southern-california/" target="_blank" rel="noopener">Club page and contacts</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -720,6 +771,12 @@ footer small{color:#c9b8ab; font-size:.82rem}
   <div class="wrap">
     <span class="brand">USA Poodle</span>
     <small>Deep Red Toy Poodles · AKC Registered · Ventura, California · Serving Southern California · (805) 888-0133</small>
+    <div class="links">
+      <a href="https://www.akc.org/" target="_blank" rel="noopener">American Kennel Club</a>
+      <a href="https://poodleclubofamerica.org/" target="_blank" rel="noopener">Poodle Club of America</a>
+      <a href="https://poodleclubofamerica.org/find-a-poodle-breeder/poodle-club-of-southern-california/" target="_blank" rel="noopener">Poodle Club of Southern California</a>
+      <a href="https://marketplace.akc.org/breeder/usapoodle/poodle/582992" target="_blank" rel="noopener">AKC Marketplace</a>
+    </div>
   </div>
 </footer>
 
