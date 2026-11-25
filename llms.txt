@@ -15,7 +15,7 @@ Website: https://usapoodle.com/
 
 ## Pages
 - [Available puppies](https://usapoodle.com/#puppies)
-- [Meet Claude](https://usapoodle.com/#claude)
+- [Goodbye, Claude](https://usapoodle.com/#claude)
 - [Clubs and resources](https://usapoodle.com/#resources)
 - [FAQ](https://usapoodle.com/#faq)
 - [Application process](https://usapoodle.com/#apply)

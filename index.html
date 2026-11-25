@@ -261,6 +261,16 @@ footer .links a{color:inherit}
 .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:1.2em}
 .badge{font-size:.76rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; background:var(--blush); color:var(--red-deep); padding:.4em .8em; border-radius:999px}
 
+/* photo rows (new puppy photos, farewell photos) */
+.photo-row{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:1em}
+.photo-row.five{grid-template-columns:repeat(5,1fr)}
+.photo-row img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:14px; box-shadow:var(--shadow); display:block}
+.row-title{font-size:1.2rem; margin:2.2em 0 0}
+@media (max-width:700px){
+  .photo-row,.photo-row.five{grid-template-columns:repeat(2,1fr); gap:10px}
+  .photo-row.five img:last-child{grid-column:span 2; aspect-ratio:4/3; object-position:50% 43%}
+}
+
 /* gallery */
 .gallery-grid{columns:4 220px; column-gap:14px; margin-top:2.2em}
 .gallery-grid img,.gallery-grid video{width:100%; border-radius:12px; box-shadow:var(--shadow); margin-bottom:14px; break-inside:avoid; display:block}
@@ -291,7 +301,7 @@ footer .links a{color:inherit}
     <a href="#program">Breed Program</a>
     <a href="#red">The Red Story</a>
     <a href="#puppies">Available Puppies</a>
-    <a href="#claude">Meet Claude</a>
+    <a href="#claude">Goodbye, Claude</a>
     <a href="#litters">Past Litters</a>
     <a href="#gallery">Gallery</a>
     <a href="#about">About Us</a>
@@ -490,8 +500,16 @@ footer .links a{color:inherit}
             <span>Born Aug 12, 2026 &nbsp;·&nbsp; Went home Nov 12</span>
           </div>
           <p style="font-size:.92rem">Claude has gone home with his new family. Sire: Pepe · Dam: Penny.</p>
+          <a href="#claude" style="color:var(--red); font-weight:700; text-decoration:none; font-size:.92rem">See his farewell photos →</a>
         </div>
       </div>
+    </div>
+    <h3 class="row-title">New photos of Fable 5.2 and Pixel</h3>
+    <div class="photo-row">
+      <img src="img/litter-2026-11-andy-with-sisters.jpg" alt="Andy Hass of USA Poodle holding Fable 5.2 and Pixel, the two red Toy Poodle sisters" loading="lazy">
+      <img src="img/litter-2026-11-andy-with-puppy.jpg" alt="Andy Hass of USA Poodle holding a red Toy Poodle puppy from the Pepe x Poppy litter" loading="lazy">
+      <img src="img/litter-2026-11-puppies-in-clover.jpg" alt="Red Toy Poodle puppies sitting together in the clover" loading="lazy">
+      <img src="img/litter-2026-11-puppy-in-clover.jpg" alt="A red Toy Poodle puppy from the Pepe x Poppy litter lying in the grass" loading="lazy">
     </div>
     <div class="btn-row"><a class="btn" href="#litters">See Recent Past Litters</a><a class="btn btn-solid" href="#apply">Apply for Fable 5.2 or Pixel</a></div>
   </div>
@@ -499,8 +517,8 @@ footer .links a{color:inherit}
 
 <section class="band-red" id="claude">
   <div class="wrap">
-    <span class="eyebrow">Meet Claude</span>
-    <h2 style="font-size:2rem; max-width:22ch">A red boy with a coat the color of a new penny.</h2>
+    <span class="eyebrow">Goodbye, Claude</span>
+    <h2 style="font-size:2rem; max-width:22ch">Goodbye, Claude. Welcome to your new home.</h2>
     <div class="split" style="margin-top:2.4em">
       <div class="media"><img src="img/claude-park-5.jpg" alt="Claude, a red Toy Poodle puppy, sitting on the grass and looking up"></div>
       <div>
@@ -512,6 +530,21 @@ footer .links a{color:inherit}
           <li>Sold &nbsp;·&nbsp; went home November 12, 2026</li>
         </ul>
       </div>
+    </div>
+    <h3 class="row-title">With his new family</h3>
+    <div class="photo-row">
+      <img src="img/claude-home-1.jpg" alt="Two children petting Claude, the red Toy Poodle puppy, on the lawn the day he went home" loading="lazy">
+      <img src="img/claude-home-4.jpg" alt="A man smiling down at Claude, the red Toy Poodle puppy, cradled in his arms in the garden" loading="lazy" style="object-position:62% 50%">
+      <img src="img/claude-home-2.jpg" alt="A child crouching on the grass with a hand on Claude, the red Toy Poodle puppy" loading="lazy">
+      <img src="img/claude-home-3.jpg" alt="Two children reaching down to Claude, the red Toy Poodle puppy, sitting on the lawn" loading="lazy">
+    </div>
+    <h3 class="row-title">At the vet</h3>
+    <div class="photo-row five">
+      <img src="img/claude-vet-1.jpg" alt="The veterinarian smiling and holding Claude, the red Toy Poodle puppy" loading="lazy">
+      <img src="img/claude-vet-2.jpg" alt="The veterinarian listening to Claude's heart with a stethoscope on the exam table" loading="lazy">
+      <img src="img/claude-vet-3.jpg" alt="A veterinary technician smiling and holding Claude, the red Toy Poodle puppy" loading="lazy">
+      <img src="img/claude-vet-4.jpg" alt="A boy petting Claude, the red Toy Poodle puppy, on a bench in the vet's waiting room" loading="lazy">
+      <img src="img/claude-vet-5.jpg" alt="Claude, the red Toy Poodle puppy, sitting next to his AKC Welcome Home puppy folder" loading="lazy">
     </div>
     <div class="cards" style="margin-top:2.4em">
       <div class="card" style="background:transparent; box-shadow:none; padding:0"><img src="img/claude-park-2.jpg" alt="Claude the red Toy Poodle puppy sitting in the park, facing the camera" loading="lazy" style="border-radius:14px; aspect-ratio:4/5; object-fit:cover; width:100%; box-shadow:var(--shadow)"></div>
@@ -566,6 +599,26 @@ footer .links a{color:inherit}
     <h2 style="font-size:2rem; max-width:22ch">A whole lot of red, curls, and happy faces.</h2>
     <p class="measure">A giant, growing gallery of our dogs, our puppies, and the families who love them.</p>
     <div class="gallery-grid">
+      <img src="img/litter-2026-11-andy-with-sisters.jpg" alt="Andy Hass of USA Poodle holding Fable 5.2 and Pixel, the two red Toy Poodle sisters" loading="lazy">
+      <video controls muted playsinline preload="none" poster="img/litter-2026-11-19-walking-poster.jpg" aria-label="Video of a Pepe x Poppy puppy at four weeks old walking across the floor beside an adult poodle"><source src="img/litter-2026-11-19-walking.mp4" type="video/mp4"></video>
+      <img src="img/litter-2026-11-puppy-in-meadow.jpg" alt="A red Toy Poodle puppy from the Pepe x Poppy litter held up in a sunny meadow" loading="lazy">
+      <img src="img/litter-2026-11-sisters-sleeping.jpg" alt="Fable 5.2 and Pixel, the two red Toy Poodle sisters, asleep side by side" loading="lazy">
+      <img src="img/litter-2026-11-andy-with-puppy.jpg" alt="Andy Hass of USA Poodle holding a red Toy Poodle puppy from the Pepe x Poppy litter" loading="lazy">
+      <img src="img/litter-2026-11-puppies-in-clover.jpg" alt="Red Toy Poodle puppies sitting together in the clover" loading="lazy">
+      <img src="img/litter-2026-11-puppy-in-clover.jpg" alt="A red Toy Poodle puppy from the Pepe x Poppy litter lying in the grass" loading="lazy">
+      <img src="img/claude-home-1.jpg" alt="Two children petting Claude, the red Toy Poodle puppy, on the lawn the day he went home" loading="lazy">
+      <img src="img/claude-vet-1.jpg" alt="The veterinarian smiling and holding Claude, the red Toy Poodle puppy" loading="lazy">
+      <img src="img/litter-2026-11-10-three-weeks-1.jpg" alt="A red Toy Poodle puppy from the Pepe x Poppy litter at three weeks old, held in one hand" loading="lazy">
+      <video controls muted playsinline preload="none" poster="img/litter-2026-11-10-three-weeks-poster.jpg" aria-label="Video of a Pepe x Poppy puppy at three weeks old, held in one hand"><source src="img/litter-2026-11-10-three-weeks.mp4" type="video/mp4"></video>
+      <img src="img/claude-home-4.jpg" alt="A man smiling down at Claude, the red Toy Poodle puppy, cradled in his arms in the garden" loading="lazy">
+      <img src="img/claude-home-2.jpg" alt="A child crouching on the grass with a hand on Claude, the red Toy Poodle puppy" loading="lazy">
+      <img src="img/litter-2026-11-10-three-weeks-2.jpg" alt="A red Toy Poodle puppy at three weeks old resting her chin on a hand" loading="lazy">
+      <img src="img/claude-vet-3.jpg" alt="A veterinary technician smiling and holding Claude, the red Toy Poodle puppy" loading="lazy">
+      <img src="img/claude-home-3.jpg" alt="Two children reaching down to Claude, the red Toy Poodle puppy, sitting on the lawn" loading="lazy">
+      <img src="img/claude-vet-2.jpg" alt="The veterinarian listening to Claude's heart with a stethoscope on the exam table" loading="lazy">
+      <img src="img/litter-2026-11-10-three-weeks-3.jpg" alt="A three-week-old red Toy Poodle puppy from the Pepe x Poppy litter held up to the camera" loading="lazy">
+      <img src="img/claude-vet-5.jpg" alt="Claude, the red Toy Poodle puppy, sitting next to his AKC Welcome Home puppy folder" loading="lazy">
+      <img src="img/claude-vet-4.jpg" alt="A boy petting Claude, the red Toy Poodle puppy, on a bench in the vet's waiting room" loading="lazy">
       <img src="img/claude-park-1.jpg" alt="Claude the red Toy Poodle puppy resting his chin on his paws in the grass" loading="lazy">
       <img src="img/poppy-litter-2026-10-30-sleeping.jpg" alt="The two Pepe x Poppy newborn red Toy Poodle puppies asleep in a pile, 10 days old" loading="lazy">
       <video controls muted playsinline preload="none" poster="img/poppy-litter-2026-10-30-poster.jpg" aria-label="Video of the Pepe x Poppy newborn puppies at 10 days old"><source src="img/poppy-litter-2026-10-30.mp4" type="video/mp4"></video>
